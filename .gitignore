@@ -1,0 +1,11 @@
+node_modules/
+out/
+dist/
+*.aio-project.db
+*.aio-project.db-wal
+*.aio-project.db-shm
+.env
+.env.local
+.DS_Store
+.claude/
+.worktrees/
