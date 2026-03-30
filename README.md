@@ -52,25 +52,29 @@ Gemini is used for semantic keyword clustering and content brief generation. If 
 
 ---
 
-## Running (development)
+## Commands
 
-```bash
-npm run dev
-```
+<!-- AUTO-GENERATED from package.json scripts -->
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot reload |
+| `npm run build` | Compile renderer, main, and preload bundles |
+| `npm run preview` | Preview the production build locally |
+| `npm run rebuild` | Recompile `better-sqlite3` native module for the current platform/arch |
+| `npm run dist` | Build all platforms |
+| `npm run dist:mac` | Build macOS DMGs (arm64 + x64), then rebuild native deps for dev |
+| `npm run dist:win` | Build Windows NSIS installer (x64) |
+| `npm run dist:linux` | Build Linux AppImage |
+<!-- END AUTO-GENERATED -->
 
 ---
 
-## Building a distributable
+## Data storage
 
-```bash
-# macOS (produces dist/*.dmg for arm64 and x64)
-npm run dist:mac
+API credentials are persisted outside the repository at:
 
-# Windows
-npm run dist:win
+- **macOS**: `~/Library/Application Support/AIO Fanout/api-credentials.json`
+- **Windows**: `%APPDATA%\AIO Fanout\api-credentials.json`
+- **Linux**: `~/.config/AIO Fanout/api-credentials.json`
 
-# Linux
-npm run dist:linux
-```
-
-Output is written to `dist/`. The macOS build is unsigned — on first launch, right-click the app and select **Open** to bypass Gatekeeper.
+Project databases (`.aio-project.db`) are stored wherever the user saves them and are excluded from git.
